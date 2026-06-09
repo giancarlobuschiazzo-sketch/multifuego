@@ -246,6 +246,42 @@
       display: block;
     }
 
+
+    /* CLIENTES */
+    .clientes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+    .cliente-card {
+      background: #fff;
+      border: 1.5px solid #f0d0d0;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cliente-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(214,40,40,0.1);
+      border-color: var(--rojo);
+    }
+    .cliente-card img {
+      max-width: 100%;
+      max-height: 70px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+    .cliente-card:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-img { height: 320px; }
@@ -487,6 +523,51 @@
     <div class="porque-card"><div class="porque-icon">🤝</div><h4>Asesoramiento gratuito</h4><p>Te ayudamos a determinar qué equipos necesita tu empresa según normativa.</p></div>
     <div class="porque-card"><div class="porque-icon">⚡</div><h4>Respuesta en 24 horas</h4><p>Cotizaciones y urgencias atendidas con rapidez en horario comercial.</p></div>
   </div>
+
+<!-- CLIENTES -->
+<section id="clientes" style="background:#fff; padding-top:64px; padding-bottom:64px;">
+  <div class="sec-eyebrow">Empresas que confían en nosotros</div>
+  <h2 class="sec-title">Más de 4.500 clientes en todo Uruguay</h2>
+  <p class="sec-desc">Empresas, organismos e instituciones de distintos rubros nos eligen para mantener su seguridad contra incendios.</p>
+
+  <div class="clientes-grid">
+    <!-- LOGO 1 -->
+    <div class="cliente-card">
+      <img src="cliente_01.png" alt="Cliente 1"/>
+    </div>
+    <!-- LOGO 2 -->
+    <div class="cliente-card">
+      <img src="cliente_02.png" alt="Cliente 2"/>
+    </div>
+    <!-- LOGO 3 -->
+    <div class="cliente-card">
+      <img src="cliente_03.png" alt="Cliente 3"/>
+    </div>
+    <!-- LOGO 4 -->
+    <div class="cliente-card">
+      <img src="cliente_04.png" alt="Cliente 4"/>
+    </div>
+    <!-- LOGO 5 -->
+    <div class="cliente-card">
+      <img src="cliente_05.png" alt="Cliente 5"/>
+    </div>
+    <!-- LOGO 6 -->
+    <div class="cliente-card">
+      <img src="cliente_06.png" alt="Cliente 6"/>
+    </div>
+    <!-- LOGO 7 -->
+    <div class="cliente-card">
+      <img src="cliente_07.png" alt="Cliente 7"/>
+    </div>
+    <!-- LOGO 8 -->
+    <div class="cliente-card">
+      <img src="cliente_08.png" alt="Cliente 8"/>
+    </div>
+  </div>
+
+  <p style="text-align:center; color:#aaa; font-size:0.82rem; margin-top:32px;">
+    ¿Querés ser parte de nuestros clientes? <a href="#contacto" style="color:var(--rojo); font-weight:700;">Contactanos →</a>
+  </p>
 </section>
 
 <!-- CTA -->
