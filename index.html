@@ -1,634 +1,549 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multifuego – Extintores & Productos de Limpieza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Extintores Multifuego – Young, Río Negro, Uruguay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /* ── TOKENS ── */
     :root {
-      --rojo:      #C1121F;
-      --rojo-osc:  #8B0000;
-      --carbon:    #1A1A1A;
-      --gris:      #2E2E2E;
-      --plata:     #F4F4F4;
-      --blanco:    #FFFFFF;
-      --azul-lim:  #1B6CA8;
-      --acento:    #FFB703;
-      --radio:     6px;
-      --fuente-titulo: 'Barlow Condensed', sans-serif;
-      --fuente-cuerpo: 'Inter', sans-serif;
+      --rojo: #D62828;
+      --rojo-osc: #A01010;
+      --rojo-vivo: #FF1A1A;
+      --carbon: #1C1C1C;
+      --gris-osc: #2D2D2D;
+      --gris-med: #555;
+      --gris-cla: #F5F5F5;
+      --blanco: #FFFFFF;
+      --naranja: #F77F00;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--carbon); background: #fff; }
 
-    body {
-      font-family: var(--fuente-cuerpo);
-      background: var(--blanco);
-      color: var(--carbon);
-    }
-
-    /* ── TOPBAR ── */
+    /* TOPBAR */
     .topbar {
-      background: var(--rojo-osc);
-      color: #fff;
-      text-align: center;
-      font-size: 0.78rem;
-      padding: 6px 16px;
-      letter-spacing: 0.04em;
+      background: var(--rojo-osc); color: #fff;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 5%; font-size: 0.78rem; flex-wrap: wrap; gap: 6px;
     }
+    .topbar a { color: #ffcdd2; text-decoration: none; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
       background: var(--carbon);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 70px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.5);
     }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-circle { flex-shrink: 0; }
+    .logo-words { display: flex; flex-direction: column; line-height: 1; }
+    .logo-ext { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.62rem; color: #bbb; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 2px; }
+    .logo-brand { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.55rem; color: #fff; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; }
 
-    .logo {
-      font-family: var(--fuente-titulo);
-      font-size: 1.7rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      color: var(--blanco);
-      text-decoration: none;
-    }
-    .logo span { color: var(--acento); }
+    .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: 0.82rem; font-weight: 600; padding: 24px 14px; display: block; transition: color 0.2s, background 0.2s; text-transform: uppercase; letter-spacing: 0.04em; }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-limpieza { background: #444 !important; color: #ddd !important; padding: 10px 16px !important; border-radius: 4px; margin-left: 8px; font-size: 0.8rem !important; }
+    .nav-limpieza:hover { background: #555 !important; color: #fff !important; }
+    .nav-cta { background: var(--rojo) !important; color: #fff !important; padding: 10px 18px !important; border-radius: 4px; margin-left: 6px; }
+    .nav-cta:hover { background: var(--rojo-osc) !important; }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--acento); }
-
-    /* ── HERO ── */
+    /* HERO — imagen principal */
     .hero {
-      position: relative;
-      background: var(--gris);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 520px;
+      min-height: 600px;
+      background: var(--carbon);
+    }
+    .hero-img {
+      position: relative;
       overflow: hidden;
     }
-
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
     .hero-text {
-      padding: 72px 5% 72px 7%;
+      background: linear-gradient(160deg, #1a0000 0%, #2d0808 40%, #1a0000 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      z-index: 2;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--acento);
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      font-family: var(--fuente-titulo);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 900;
-      line-height: 1.05;
-      color: var(--blanco);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--rojo);
-    }
-
-    .hero p {
-      color: #aaa;
-      font-size: 1rem;
-      line-height: 1.65;
-      max-width: 420px;
-      margin-bottom: 32px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: var(--radio);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      border: none;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
-
-    .btn-primary { background: var(--rojo); color: #fff; }
-    .btn-secondary { background: transparent; color: #fff; border: 1.5px solid #555; }
-    .btn-wa { background: #25D366; color: #fff; }
-    .btn-azul { background: var(--azul-lim); color: #fff; }
-
-    .hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12rem;
-      opacity: 0.18;
-      user-select: none;
-    }
-
-    /* ── SECCIONES GENÉRICAS ── */
-    section { padding: 80px 7%; }
-
-    .sec-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-    }
-    .sec-label.rojo { background: #fde8e8; color: var(--rojo-osc); }
-    .sec-label.azul { background: #e0eefc; color: var(--azul-lim); }
-
-    .sec-title {
-      font-family: var(--fuente-titulo);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      line-height: 1.1;
-    }
-
-    .sec-sub {
-      color: #666;
-      font-size: 1rem;
-      line-height: 1.65;
-      max-width: 560px;
-      margin-bottom: 48px;
-    }
-
-    /* ── GRID PRODUCTOS ── */
-    .prod-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 20px;
-    }
-
-    .prod-card {
-      background: var(--plata);
-      border-radius: var(--radio);
+      padding: 56px 48px;
+      position: relative;
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1.5px solid #e8e8e8;
     }
-    .prod-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-
-    .prod-img {
-      background: #e0e0e0;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
+    .hero-text::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(214,40,40,0.04) 40px, rgba(214,40,40,0.04) 80px);
     }
-    .prod-img.rojo-bg { background: #fde8e8; }
-    .prod-img.azul-bg { background: #e0eefc; }
-
-    .prod-info { padding: 16px; }
-    .prod-info h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
-    .prod-info p { font-size: 0.82rem; color: #666; line-height: 1.5; }
-
-    .prod-tag {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
+    .hero-text > * { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(214,40,40,0.25); border: 1px solid rgba(214,40,40,0.5);
+      color: #ff8a80; padding: 6px 14px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 20px; width: fit-content;
     }
-    .prod-tag.rojo { background: var(--rojo); color: #fff; }
-    .prod-tag.azul { background: var(--azul-lim); color: #fff; }
-
-    /* ── FRANJA CONTACTO ── */
-    .franja-contacto {
-      background: var(--carbon);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      padding: 48px 7%;
-    }
-    .franja-contacto h2 {
-      font-family: var(--fuente-titulo);
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 900;
+    .hero-text h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px;
       text-transform: uppercase;
     }
-    .franja-contacto p { color: #999; margin-top: 6px; font-size: 0.95rem; }
+    .hero-text h1 em { font-style: normal; color: var(--rojo); }
+    .hero-text p { color: #bbb; font-size: 0.95rem; line-height: 1.7; margin-bottom: 28px; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+    .hero-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 14px; text-align: center; }
+    .hero-stat .num { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--rojo); }
+    .hero-stat .lbl { font-size: 0.7rem; color: #aaa; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* ── FORMULARIO ── */
-    #contacto { background: var(--plata); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 4px; font-weight: 700; font-size: 0.9rem; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; font-family: 'Open Sans', sans-serif; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .btn-red { background: var(--rojo); color: #fff; }
+    .btn-red:hover { background: var(--rojo-osc); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-naranja { background: var(--naranja); color: #fff; }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 680px;
+    /* TRUST STRIP */
+    .trust-strip {
+      background: var(--rojo); padding: 16px 5%;
+      display: flex; align-items: center; justify-content: space-around; gap: 16px; flex-wrap: wrap;
     }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 0.88rem; font-weight: 600; }
+    .trust-item span { font-size: 1.2rem; }
+
+    /* SECCIONES */
+    section { padding: 72px 5%; }
+    .bg-rojo-suave { background: #fff5f5; }
+    .bg-gris { background: var(--gris-cla); }
+    .bg-rojo { background: var(--rojo); }
+    .bg-carbon { background: var(--carbon); }
+
+    .sec-eyebrow {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--rojo); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .sec-eyebrow::before { content: ''; display: block; width: 28px; height: 3px; background: var(--rojo); border-radius: 2px; }
+    .sec-eyebrow.blanco { color: #fff; }
+    .sec-eyebrow.blanco::before { background: rgba(255,255,255,0.6); }
+    .sec-title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 900; line-height: 1.15; margin-bottom: 14px; }
+    .sec-title.blanco { color: #fff; }
+    .sec-desc { color: var(--gris-med); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 48px; }
+    .sec-desc.blanco { color: rgba(255,255,255,0.75); }
+
+    /* PRODUCTOS */
+    .prod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .prod-card { border: 1px solid #f0d0d0; border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; background: #fff; }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(214,40,40,0.15); }
+    .prod-img { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 5rem; background: #fff0f0; position: relative; }
+    .prod-badge { position: absolute; top: 12px; left: 12px; background: var(--rojo); color: #fff; font-size: 0.68rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+    .prod-body { padding: 16px; }
+    .prod-body h4 { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .prod-body p { font-size: 0.82rem; color: #666; line-height: 1.55; }
+    .prod-footer { padding: 12px 16px; border-top: 1px solid #ffe0e0; }
+    .prod-consultar { font-size: 0.8rem; font-weight: 700; color: var(--rojo); text-decoration: none; }
+
+    /* SERVICIOS */
+    .serv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .serv-card { border-radius: 8px; overflow: hidden; border: 1px solid #f0d0d0; transition: transform 0.2s, box-shadow 0.2s; }
+    .serv-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(214,40,40,0.12); }
+    .serv-header { padding: 28px 24px 20px; background: linear-gradient(135deg, #D62828, #8B0000); }
+    .serv-icon { font-size: 2.4rem; margin-bottom: 10px; }
+    .serv-name { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
+    .serv-body { padding: 20px 24px; background: #fff; }
+    .serv-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .serv-items li { font-size: 0.88rem; color: #444; display: flex; align-items: center; gap: 8px; }
+    .serv-items li::before { content: '→'; color: var(--rojo); font-weight: 700; }
+    .serv-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 0.85rem; font-weight: 700; color: var(--rojo); text-decoration: none; }
+
+    /* SECTORES */
+    .sectores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 16px; }
+    .sector-card { background: #fff; border-radius: 8px; padding: 24px 16px; text-align: center; border: 1px solid #f0d0d0; transition: all 0.2s; cursor: pointer; }
+    .sector-card:hover { background: var(--rojo); border-color: var(--rojo); }
+    .sector-card:hover .sector-name { color: #fff; }
+    .sector-card:hover .sector-ico { background: rgba(255,255,255,0.2); }
+    .sector-ico { width: 54px; height: 54px; background: #fff0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 1.5rem; transition: background 0.2s; }
+    .sector-name { font-size: 0.85rem; font-weight: 700; color: var(--carbon); transition: color 0.2s; }
+
+    /* ACCESO LIMPIEZA */
+    .limpieza-acceso {
+      background: var(--carbon);
+      border-top: 4px solid var(--rojo);
+      padding: 48px 5%;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+    }
+    .limpieza-acceso-left { display: flex; align-items: center; gap: 24px; }
+    .limpieza-acceso-icon { width: 70px; height: 70px; background: rgba(255,255,255,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.12); }
+    .limpieza-acceso h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.3rem; color: #fff; margin-bottom: 6px; }
+    .limpieza-acceso p { color: #999; font-size: 0.92rem; line-height: 1.6; max-width: 420px; }
+    .btn-gris { background: rgba(255,255,255,0.1); color: #fff !important; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-gris:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+    /* PORQUE */
+    .porque-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+    .porque-card { background: #fff; border-radius: 8px; padding: 28px 24px; border-left: 4px solid var(--rojo); box-shadow: 0 2px 12px rgba(214,40,40,0.08); }
+    .porque-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .porque-card h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+    .porque-card p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+
+    /* CTA FRANJA */
+    .cta-franja { background: linear-gradient(135deg, var(--rojo-osc), #3d0000); padding: 60px 5%; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-franja h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 900; color: #fff; max-width: 500px; }
+    .cta-franja p { color: #ffcdd2; margin-top: 8px; font-size: 0.95rem; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* CONTACTO */
+    .contacto-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+    .info-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+    .info-icon { width: 44px; height: 44px; background: #fff0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid #ffd0d0; }
+    .info-label { font-size: 0.75rem; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .info-val { font-size: 0.95rem; font-weight: 600; margin-top: 2px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .form-grid .full { grid-column: 1 / -1; }
+    label { display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px; color: #555; text-transform: uppercase; letter-spacing: 0.04em; }
+    input, textarea, select { width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 4px; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; color: var(--carbon); background: #fff; transition: border-color 0.2s; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--rojo); }
+    textarea { resize: vertical; min-height: 110px; }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #ddd;
-      border-radius: var(--radio);
-      font-family: var(--fuente-cuerpo);
-      font-size: 0.9rem;
-      background: #fff;
-      color: var(--carbon);
-      transition: border-color 0.2s;
-    }
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: var(--rojo);
-    }
-    textarea { resize: vertical; min-height: 120px; }
+    /* FOOTER */
+    footer { background: #111; color: #888; padding: 48px 5% 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: 0.85rem; color: #666; line-height: 1.7; margin-top: 12px; max-width: 280px; }
+    .footer-col h5 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.82rem; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { color: #777; font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #ccc; }
+    .footer-bottom { border-top: 1px solid #222; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; }
+    .footer-rojo { color: var(--rojo); }
 
-    label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; color: #444; }
+    /* WA FLOTANTE */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 200; background: #25D366; color: #fff; border-radius: 50px; display: flex; align-items: center; gap: 8px; padding: 14px 22px; font-weight: 700; font-size: 0.9rem; text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,0.45); transition: transform 0.2s; }
+    .wa-float:hover { transform: translateY(-3px); }
+    .wa-float svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
 
-    /* ── POR QUÉ NOSOTROS ── */
-    .ventajas {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 24px;
-      margin-top: 12px;
-    }
-    .ventaja-card {
-      background: var(--blanco);
-      border: 1.5px solid #e8e8e8;
-      border-radius: var(--radio);
-      padding: 28px 22px;
-      text-align: center;
-    }
-    .ventaja-icon { font-size: 2.4rem; margin-bottom: 12px; }
-    .ventaja-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
-    .ventaja-card p { font-size: 0.83rem; color: #666; line-height: 1.55; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #111;
-      color: #888;
-      text-align: center;
-      padding: 32px 7%;
-      font-size: 0.82rem;
-    }
-    footer .logo { font-size: 1.3rem; margin-bottom: 10px; display: block; }
-
-    /* ── WHATSAPP FLOTANTE ── */
-    .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 200;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 20px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
-    .wa-float svg { width: 22px; height: 22px; fill: #fff; }
-
-    /* ── DIVISOR ── */
-    .divider {
-      border: none;
-      height: 3px;
-      background: linear-gradient(90deg, var(--rojo), var(--acento), var(--azul-lim));
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .hero-text { padding: 56px 7%; }
+      .hero-img { height: 320px; }
+      .contacto-wrap { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .limpieza-acceso { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
       .form-grid { grid-template-columns: 1fr; }
-      .franja-contacto { flex-direction: column; text-align: center; }
+      .cta-franja { flex-direction: column; }
+      .limpieza-acceso-left { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">📍 Montevideo, Uruguay &nbsp;|&nbsp; Lunes a Viernes 8:00–18:00 &nbsp;|&nbsp; ☎ (098) 000 000</div>
+<div class="topbar">
+  <span>📍 Young, Río Negro, Uruguay &nbsp;|&nbsp; Lun–Vie 8:00–12:00 / 14:00–18:00 &nbsp;|&nbsp; Sáb 8:00–12:00</span>
+  <span>☎ <a href="tel:+59245674164">Línea: 4567 4164</a> &nbsp;|&nbsp; 📱 <a href="tel:+598099560170">Adm: 099 560 170</a> &nbsp;|&nbsp; ✉ <a href="mailto:multifuegosrl@gmail.com">multifuegosrl@gmail.com</a></span>
+</div>
 
-<!-- NAV -->
 <nav>
-  <a class="logo" href="#inicio">Multi<span style="color:var(--acento)">fuego</span></a>
+  <a class="logo" href="#inicio">
+    <div class="logo-circle">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+        <circle cx="30" cy="30" r="30" fill="#D62828"/>
+        <path d="M30 8 C26 14 20 18 20 26 C20 32 24 36 28 37 C26 34 26 30 29 28 C29 32 31 35 30 39 C33 37 36 33 36 28 C36 24 34 20 30 16 C32 20 32 24 30 27 C28 22 30 14 30 8Z" fill="white"/>
+        <path d="M22 38 C20 35 19 31 21 28 C21 32 23 34 25 36 C24 33 24 30 26 28 C27 32 26 36 24 39Z" fill="white" opacity="0.7"/>
+        <path d="M38 38 C40 35 41 31 39 28 C39 32 37 34 35 36 C36 33 36 30 34 28 C33 32 34 36 36 39Z" fill="white" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="logo-words">
+      <span class="logo-ext">EXTINTORES</span>
+      <span class="logo-brand">MULTIFUEGO</span>
+    </div>
+  </a>
   <ul class="nav-links">
     <li><a href="#extintores">Extintores</a></li>
-    <li><a href="#limpieza">Limpieza</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sectores">Sectores</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="limpieza.html" class="nav-limpieza">🧴 Limpieza</a></li>
+    <li><a href="#contacto" class="nav-cta">Cotizar ahora</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
+<div class="hero" id="inicio">
+  <div class="hero-img">
+    <img src="Multifuego_New.jpg" alt="Donde hubo fuego no había extintores - Extintores Multifuego"/>
+  </div>
   <div class="hero-text">
-    <p class="hero-eyebrow">Seguridad · Prevención · Limpieza</p>
-    <h1>Tu negocio<br/><em>protegido</em><br/>y limpio</h1>
-    <p>Extintores, equipos contra incendio y productos de limpieza profesional. Todo en un solo lugar, con la calidad y el asesoramiento que tu empresa necesita.</p>
-    <div class="hero-ctas">
-      <a href="#extintores" class="btn btn-primary">Ver productos 🔥</a>
-      <a href="#contacto" class="btn btn-secondary">Solicitar cotización</a>
+    <div class="hero-badge">✅ Empresa habilitada y certificada</div>
+    <h1>Venta · Recarga<br/>Inspección<br/><em>Mantenimiento</em></h1>
+    <p>Especialistas en extintores y equipos de seguridad contra incendios. Asesoramiento personalizado para empresas, comercios e industrias en Uruguay.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">+500</div><div class="lbl">Clientes</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">Certificados</div></div>
+      <div class="hero-stat"><div class="num">24h</div><div class="lbl">Respuesta</div></div>
+      <div class="hero-stat"><div class="num">+10</div><div class="lbl">Años</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-red">Solicitar cotización →</a>
+      <a href="https://wa.me/598099560170?text=Hola!%20Necesito%20una%20cotizaci%C3%B3n%20de%20Multifuego." target="_blank" class="btn btn-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.8a.5.5 0 00.611.634l6.087-1.596A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.518-5.17-1.419l-.37-.222-3.833 1.004 1.022-3.737-.241-.386A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
-  <div class="hero-visual">🧯</div>
-</section>
+</div>
 
-<hr class="divider" />
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span>🛡️</span> Empresa habilitada y certificada</div>
+  <div class="trust-item"><span>🔧</span> Servicio técnico propio</div>
+  <div class="trust-item"><span>🚚</span> Entrega a domicilio</div>
+  <div class="trust-item"><span>💼</span> Precios mayoristas</div>
+  <div class="trust-item"><span>📞</span> Asesoramiento gratuito</div>
+</div>
 
 <!-- EXTINTORES -->
-<section id="extintores">
-  <span class="sec-label rojo">Seguridad contra incendios</span>
-  <h2 class="sec-title">Extintores &amp; Prevención</h2>
-  <p class="sec-sub">Comercializamos extintores y equipos de protección contra incendios homologados, con servicio de recarga y mantenimiento.</p>
-
+<section id="extintores" class="bg-rojo-suave">
+  <div class="sec-eyebrow">Extintores</div>
+  <h2 class="sec-title">Nuestra línea de extintores</h2>
+  <p class="sec-desc">Todos nuestros extintores cumplen la normativa vigente en Uruguay. Disponibles en distintas capacidades y agentes extintores según el riesgo a proteger.</p>
   <div class="prod-grid">
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🧯</div>
-      <div class="prod-info">
-        <h4>Extintor CO₂ 5 kg</h4>
-        <p>Ideal para cuadros eléctricos y servidores. Sin residuos.</p>
-        <span class="prod-tag rojo">Disponible</span>
-      </div>
+      <div class="prod-img"><div class="prod-badge">CO₂</div>🧯</div>
+      <div class="prod-body"><h4>Extintor CO₂ 5 kg</h4><p>Ideal para cuadros eléctricos, servidores y laboratorios. Sin residuos.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🔴</div>
-      <div class="prod-info">
-        <h4>Extintor Polvo ABC 6 kg</h4>
-        <p>Multiusos: sólidos, líquidos y gases inflamables.</p>
-        <span class="prod-tag rojo">Disponible</span>
-      </div>
+      <div class="prod-img"><div class="prod-badge">ABC</div>🔴</div>
+      <div class="prod-body"><h4>Extintor Polvo ABC 6 kg</h4><p>Multiusos para sólidos, líquidos y gases inflamables. El más solicitado.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🚨</div>
-      <div class="prod-info">
-        <h4>Detector de humo</h4>
-        <p>Alarma iónica de alta sensibilidad para hogares y oficinas.</p>
-        <span class="prod-tag rojo">Disponible</span>
-      </div>
+      <div class="prod-img"><div class="prod-badge">ABC</div>🧯</div>
+      <div class="prod-body"><h4>Extintor Polvo ABC 10 kg</h4><p>Mayor capacidad para depósitos, talleres e industrias de alto riesgo.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🪝</div>
-      <div class="prod-info">
-        <h4>Manguera contra incendio</h4>
-        <p>Kits completos con boquilla y soporte para instalar en cualquier espacio.</p>
-        <span class="prod-tag rojo">Disponible</span>
-      </div>
+      <div class="prod-img"><div class="prod-badge">Agua</div>💧</div>
+      <div class="prod-body"><h4>Extintor de agua y espuma</h4><p>Para materiales sólidos combustibles. Ideal en depósitos y almacenes.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🪧</div>
-      <div class="prod-info">
-        <h4>Señalización de emergencia</h4>
-        <p>Carteles fotoluminiscentes para salidas, escaleras y equipos.</p>
-        <span class="prod-tag rojo">Disponible</span>
-      </div>
+      <div class="prod-img"><div class="prod-badge">Limpio</div>🟢</div>
+      <div class="prod-body"><h4>Extintor agente limpio</h4><p>Sin residuos, para salas de servidores y equipos electrónicos sensibles.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
     <div class="prod-card">
-      <div class="prod-img rojo-bg">🛡️</div>
-      <div class="prod-info">
-        <h4>Recarga y mantenimiento</h4>
-        <p>Servicio técnico certificado. Retiro y entrega a domicilio.</p>
-        <span class="prod-tag rojo">Servicio</span>
+      <div class="prod-img"><div class="prod-badge">Auto</div>⚙️</div>
+      <div class="prod-body"><h4>Extintor automático modular</h4><p>Se activa sin intervención humana. Para cocinas y cuadros eléctricos.</p></div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="sec-eyebrow">Servicios</div>
+  <h2 class="sec-title">Servicio integral de seguridad</h2>
+  <p class="sec-desc">Más que venta de extintores. Ofrecemos un servicio completo para mantener tu empresa protegida y en regla.</p>
+  <div class="serv-grid">
+    <div class="serv-card">
+      <div class="serv-header"><div class="serv-icon">🔧</div><div class="serv-name">Recarga & Mantenimiento</div></div>
+      <div class="serv-body">
+        <ul class="serv-items">
+          <li>Recarga con certificado oficial</li>
+          <li>Prueba hidrostática de cilindros</li>
+          <li>Retiro y entrega a domicilio</li>
+          <li>Revisión anual de equipos</li>
+          <li>Etiquetado y registro actualizado</li>
+        </ul>
+        <a href="#contacto" class="serv-link">Agendar servicio →</a>
+      </div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-header"><div class="serv-icon">🚨</div><div class="serv-name">Detección & Alarmas</div></div>
+      <div class="serv-body">
+        <ul class="serv-items">
+          <li>Detectores de humo iónicos</li>
+          <li>Detectores de calor</li>
+          <li>Centrales de alarma contra incendio</li>
+          <li>Sirenas y señales luminosas</li>
+          <li>Instalación y puesta en marcha</li>
+        </ul>
+        <a href="#contacto" class="serv-link">Consultar →</a>
+      </div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-header"><div class="serv-icon">🪧</div><div class="serv-name">Señalización & Accesorios</div></div>
+      <div class="serv-body">
+        <ul class="serv-items">
+          <li>Carteles fotoluminiscentes de salida</li>
+          <li>Señalización de extintores y mangueras</li>
+          <li>Mangueras y gabinetes contra incendio</li>
+          <li>Soportes y cajas para extintores</li>
+          <li>Planes de evacuación</li>
+        </ul>
+        <a href="#contacto" class="serv-link">Ver productos →</a>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="divider" />
-
-<!-- LIMPIEZA -->
-<section id="limpieza" style="background: #f9f9f9;">
-  <span class="sec-label azul">Higiene profesional</span>
-  <h2 class="sec-title">Productos de Limpieza</h2>
-  <p class="sec-sub">Línea completa de productos de limpieza e higiene para empresas, oficinas, comercios e industrias. Presentaciones mayoristas y minoristas.</p>
-
-  <div class="prod-grid">
-    <div class="prod-card">
-      <div class="prod-img azul-bg">🧴</div>
-      <div class="prod-info">
-        <h4>Desinfectante multiusos</h4>
-        <p>Formula concentrada de uso profesional. Elimina el 99,9% de gérmenes.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-img azul-bg">🫧</div>
-      <div class="prod-info">
-        <h4>Detergente industrial</h4>
-        <p>Para pisos, cocinas y superficies de alto tráfico. Balde x 5 L.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-img azul-bg">🧹</div>
-      <div class="prod-info">
-        <h4>Kit de limpieza completo</h4>
-        <p>Escoba, trapeador, balde escurridor y productos incluidos.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-img azul-bg">🧼</div>
-      <div class="prod-info">
-        <h4>Jabón líquido para manos</h4>
-        <p>Formato dispensador 500 ml y galón 5 L para recarga.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-img azul-bg">💧</div>
-      <div class="prod-info">
-        <h4>Hipoclorito de sodio</h4>
-        <p>Alta concentración para desinfección de superficies y agua.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-img azul-bg">🧻</div>
-      <div class="prod-info">
-        <h4>Papel y descartables</h4>
-        <p>Rollos, servilletas, bolsas y accesorios para baños y cocinas.</p>
-        <span class="prod-tag azul">Disponible</span>
-      </div>
-    </div>
+<!-- SECTORES -->
+<section id="sectores" class="bg-rojo-suave">
+  <div class="sec-eyebrow">Sectores</div>
+  <h2 class="sec-title">Trabajamos con todos los rubros</h2>
+  <p class="sec-desc">Adaptamos nuestros productos y servicios a cada tipo de empresa y normativa aplicable.</p>
+  <div class="sectores-grid">
+    <div class="sector-card"><div class="sector-ico">🏢</div><div class="sector-name">Oficinas</div></div>
+    <div class="sector-card"><div class="sector-ico">🏭</div><div class="sector-name">Industrias</div></div>
+    <div class="sector-card"><div class="sector-ico">🏨</div><div class="sector-name">Hoteles</div></div>
+    <div class="sector-card"><div class="sector-ico">🍽️</div><div class="sector-name">Restaurantes</div></div>
+    <div class="sector-card"><div class="sector-ico">🏫</div><div class="sector-name">Escuelas</div></div>
+    <div class="sector-card"><div class="sector-ico">🏥</div><div class="sector-name">Hospitales</div></div>
+    <div class="sector-card"><div class="sector-ico">🛒</div><div class="sector-name">Comercios</div></div>
+    <div class="sector-card"><div class="sector-ico">🏠</div><div class="sector-name">Residencial</div></div>
   </div>
 </section>
 
-<!-- FRANJA WHATSAPP -->
-<div class="franja-contacto">
-  <div>
-    <h2>¿Necesitás una cotización rápida?</h2>
-    <p>Respondemos en menos de 1 hora por WhatsApp en horario comercial.</p>
+<!-- ACCESO LIMPIEZA -->
+<div class="limpieza-acceso">
+  <div class="limpieza-acceso-left">
+    <div class="limpieza-acceso-icon">🧴</div>
+    <div>
+      <h3>¿También necesitás productos de limpieza?</h3>
+      <p>Contamos con una línea completa de productos de higiene y limpieza profesional para empresas, comercios e industrias.</p>
+    </div>
   </div>
-  <a href="https://wa.me/598900000000?text=Hola!%20Quisiera%20consultar%20sobre%20sus%20productos." target="_blank" class="btn btn-wa" style="font-size:1rem; padding: 16px 32px;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.8a.5.5 0 00.611.634l6.087-1.596A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.518-5.17-1.419l-.37-.222-3.833 1.004 1.022-3.737-.241-.386A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-    Escribinos por WhatsApp
-  </a>
+  <a href="limpieza.html" class="btn btn-gris" style="white-space:nowrap; padding:16px 32px; font-size:1rem;">Ver línea de limpieza →</a>
 </div>
 
 <!-- POR QUÉ NOSOTROS -->
 <section id="nosotros">
-  <span class="sec-label rojo">¿Por qué elegirnos?</span>
-  <h2 class="sec-title">Nuestra diferencia</h2>
-  <p class="sec-sub">Más de años de experiencia en el mercado uruguayo nos respaldan.</p>
-
-  <div class="ventajas">
-    <div class="ventaja-card">
-      <div class="ventaja-icon">✅</div>
-      <h4>Productos certificados</h4>
-      <p>Todos nuestros extintores cumplen normativa uruguaya e internacional.</p>
-    </div>
-    <div class="ventaja-card">
-      <div class="ventaja-icon">🚚</div>
-      <h4>Entrega a domicilio</h4>
-      <p>Enviamos a todo Montevideo y el interior del país.</p>
-    </div>
-    <div class="ventaja-card">
-      <div class="ventaja-icon">💼</div>
-      <h4>Precios mayoristas</h4>
-      <p>Descuentos especiales para empresas y compras al por mayor.</p>
-    </div>
-    <div class="ventaja-card">
-      <div class="ventaja-icon">🔧</div>
-      <h4>Servicio técnico</h4>
-      <p>Recarga y mantenimiento de extintores con certificado incluido.</p>
-    </div>
+  <div class="sec-eyebrow">¿Por qué Multifuego?</div>
+  <h2 class="sec-title">Más de una década en Young, Río Negro</h2>
+  <p class="sec-desc">Somos especialistas comprometidos con la seguridad de tu negocio en todo el Uruguay.</p>
+  <div class="porque-grid">
+    <div class="porque-card"><div class="porque-icon">✅</div><h4>Empresa certificada</h4><p>Habilitados y certificados según normativa uruguaya e internacional.</p></div>
+    <div class="porque-card"><div class="porque-icon">🔧</div><h4>Servicio técnico propio</h4><p>Recarga, inspección y mantenimiento con certificado oficial incluido.</p></div>
+    <div class="porque-card"><div class="porque-icon">🚚</div><h4>Llegamos a todo Uruguay</h4><p>Atendemos Young, Río Negro y todo el interior y Montevideo.</p></div>
+    <div class="porque-card"><div class="porque-icon">💼</div><h4>Precios mayoristas</h4><p>Descuentos especiales para empresas, licitaciones y compras al por mayor.</p></div>
+    <div class="porque-card"><div class="porque-icon">🤝</div><h4>Asesoramiento gratuito</h4><p>Te ayudamos a determinar qué equipos necesita tu empresa según normativa.</p></div>
+    <div class="porque-card"><div class="porque-icon">⚡</div><h4>Respuesta en 24 horas</h4><p>Cotizaciones y urgencias atendidas con rapidez en horario comercial.</p></div>
   </div>
 </section>
+
+<!-- CTA -->
+<div class="cta-franja">
+  <div>
+    <h2>¿Necesitás equipar tu empresa o recargar extintores?</h2>
+    <p>Respondemos en menos de 1 hora en horario comercial.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="https://wa.me/598099560170?text=Hola!%20Necesito%20una%20cotizaci%C3%B3n%20de%20Multifuego." target="_blank" class="btn btn-wa">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.8a.5.5 0 00.611.634l6.087-1.596A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.518-5.17-1.419l-.37-.222-3.833 1.004 1.022-3.737-.241-.386A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      099 560 170
+    </a>
+    <a href="#contacto" class="btn btn-naranja">Formulario de contacto</a>
+  </div>
+</div>
 
 <!-- CONTACTO -->
 <section id="contacto">
-  <span class="sec-label azul">Contacto</span>
-  <h2 class="sec-title">Escribinos</h2>
-  <p class="sec-sub">Completá el formulario y te respondemos a la brevedad con la mejor propuesta para tu negocio.</p>
-
-  <div class="form-grid">
+  <div class="sec-eyebrow">Contacto</div>
+  <h2 class="sec-title">Pedí tu cotización</h2>
+  <div class="contacto-wrap">
     <div>
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" placeholder="Tu nombre" />
+      <div class="info-item"><div class="info-icon">☎️</div><div><div class="info-label">Línea fija</div><div class="info-val">4567 4164</div></div></div>
+      <div class="info-item"><div class="info-icon">📱</div><div><div class="info-label">Administración / WhatsApp</div><div class="info-val">099 560 170</div></div></div>
+      <div class="info-item"><div class="info-icon">✉️</div><div><div class="info-label">Email</div><div class="info-val">multifuegosrl@gmail.com</div></div></div>
+      <div class="info-item"><div class="info-icon">📍</div><div><div class="info-label">Ubicación</div><div class="info-val">Young, Río Negro, Uruguay</div></div></div>
+      <div class="info-item"><div class="info-icon">🕐</div><div><div class="info-label">Horarios</div><div class="info-val">Lun–Vie: 8:00–12:00 / 14:00–18:00<br/>Sábados: 8:00–12:00</div></div></div>
     </div>
-    <div>
-      <label for="empresa">Empresa (opcional)</label>
-      <input type="text" id="empresa" placeholder="Nombre de tu empresa" />
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="tu@email.com" />
-    </div>
-    <div>
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" placeholder="09X XXX XXX" />
-    </div>
-    <div>
-      <label for="interes">¿Qué te interesa?</label>
-      <select id="interes">
-        <option value="">Seleccioná una opción</option>
-        <option>Extintores y prevención de incendios</option>
-        <option>Productos de limpieza</option>
-        <option>Ambas categorías</option>
-        <option>Servicio técnico / recarga</option>
-      </select>
-    </div>
-    <div>
-      <label for="cantidad">Cantidad aproximada</label>
-      <input type="text" id="cantidad" placeholder="Ej: 10 unidades" />
-    </div>
-    <div class="full">
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" placeholder="Contanos qué necesitás..."></textarea>
-    </div>
-    <div class="full">
-      <button class="btn btn-primary" onclick="enviarFormulario()" style="font-size:1rem; padding:14px 32px;">Enviar consulta →</button>
+    <div class="form-grid">
+      <div><label>Nombre *</label><input type="text" id="nombre" placeholder="Tu nombre"/></div>
+      <div><label>Empresa</label><input type="text" id="empresa" placeholder="Tu empresa"/></div>
+      <div><label>Email *</label><input type="email" id="email" placeholder="tu@email.com"/></div>
+      <div><label>Teléfono</label><input type="tel" id="tel" placeholder="09X XXX XXX"/></div>
+      <div class="full">
+        <label>¿Qué necesitás?</label>
+        <select id="interes">
+          <option value="">Seleccioná una opción</option>
+          <option>Extintores nuevos</option>
+          <option>Recarga de extintores</option>
+          <option>Detección y alarmas</option>
+          <option>Señalización</option>
+          <option>Asesoramiento en normativa</option>
+        </select>
+      </div>
+      <div class="full"><label>Mensaje</label><textarea id="msg" placeholder="Contanos qué necesitás, cantidad aproximada..."></textarea></div>
+      <div class="full"><button class="btn btn-red" onclick="enviar()" style="width:100%;justify-content:center;padding:15px;font-size:1rem;">Enviar consulta →</button></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <a class="logo" href="#inicio">Multi<span style="color:var(--acento)">fuego</span></a>
-  <p>Extintores, seguridad contra incendios y productos de limpieza</p>
-  <p style="margin-top:8px;">Montevideo, Uruguay &nbsp;·&nbsp; <a href="mailto:contacto@multifuego.com" style="color:#888;">contacto@multifuego.com</a></p>
-  <p style="margin-top:16px; font-size:0.75rem; color:#555;">© 2025 Multifuego. Todos los derechos reservados.</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#inicio">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="36" height="36" style="flex-shrink:0"><circle cx="30" cy="30" r="30" fill="#D62828"/><path d="M30 8 C26 14 20 18 20 26 C20 32 24 36 28 37 C26 34 26 30 29 28 C29 32 31 35 30 39 C33 37 36 33 36 28 C36 24 34 20 30 16 C32 20 32 24 30 27 C28 22 30 14 30 8Z" fill="white"/></svg>
+        <div style="display:flex;flex-direction:column;line-height:1;margin-left:10px"><span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.55rem;color:#999;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px;">EXTINTORES</span><span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;color:#fff;letter-spacing:0.04em;text-transform:uppercase;">MULTIFUEGO</span></div>
+      </a>
+      <p>Especialistas en extintores y equipos de prevención de incendios. Young, Río Negro, Uruguay.</p>
+      <p style="margin-top:10px;color:#555;">📱 @multifuegosrl</p>
+    </div>
+    <div class="footer-col">
+      <h5>Productos</h5>
+      <ul>
+        <li><a href="#extintores">Extintor CO₂</a></li>
+        <li><a href="#extintores">Extintor Polvo ABC</a></li>
+        <li><a href="#servicios">Detección de humo</a></li>
+        <li><a href="#servicios">Mangueras</a></li>
+        <li><a href="limpieza.html">Productos de limpieza</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="tel:+59245674164">☎ 4567 4164</a></li>
+        <li><a href="tel:+598099560170">📱 099 560 170</a></li>
+        <li><a href="mailto:multifuegosrl@gmail.com">✉ multifuegosrl@gmail.com</a></li>
+        <li><a href="#nosotros">Young, Río Negro</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Extintores Multifuego SRL. Todos los derechos reservados.</span>
+    <span class="footer-rojo">Young, Río Negro, Uruguay</span>
+  </div>
 </footer>
 
-<!-- BOTÓN FLOTANTE WA -->
-<a class="wa-float" href="https://wa.me/598900000000?text=Hola!%20Quisiera%20consultar%20sobre%20sus%20productos." target="_blank">
+<a class="wa-float" href="https://wa.me/598099560170?text=Hola!%20Quisiera%20consultar%20sobre%20extintores%20Multifuego." target="_blank">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.8a.5.5 0 00.611.634l6.087-1.596A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.518-5.17-1.419l-.37-.222-3.833 1.004 1.022-3.737-.241-.386A10 10 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
   WhatsApp
 </a>
 
 <script>
-  function enviarFormulario() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
-
-    if (!nombre || !email) {
-      alert('Por favor completá al menos tu nombre y email.');
-      return;
-    }
-
-    const interes = document.getElementById('interes').value;
-    const telefono = document.getElementById('telefono').value;
-    const empresa = document.getElementById('empresa').value;
-    const cantidad = document.getElementById('cantidad').value;
-
-    const texto = `Hola! Soy ${nombre}${empresa ? ' de ' + empresa : ''}. Me interesa: ${interes || 'sus productos'}. ${mensaje ? 'Mensaje: ' + mensaje : ''} Tel: ${telefono || 'no indicado'}`;
-    const url = `https://wa.me/598900000000?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
-  }
+function enviar() {
+  const nombre = document.getElementById('nombre').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!nombre || !email) { alert('Por favor completá tu nombre y email.'); return; }
+  const interes = document.getElementById('interes').value;
+  const tel = document.getElementById('tel').value;
+  const empresa = document.getElementById('empresa').value;
+  const msg = document.getElementById('msg').value;
+  const texto = `Hola! Soy ${nombre}${empresa ? ' de '+empresa : ''}. Consulta: ${interes||'extintores'}. ${msg} Tel: ${tel||'no indicado'}`;
+  window.open(`https://wa.me/598099560170?text=${encodeURIComponent(texto)}`, '_blank');
+}
 </script>
-
 </body>
 </html>
