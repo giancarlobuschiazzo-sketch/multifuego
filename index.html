@@ -230,6 +230,22 @@
     .wa-float:hover { transform: translateY(-3px); }
     .wa-float svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
 
+
+    /* TARJETAS CON FOTO REAL */
+    .prod-card-featured { border: 2px solid #f0d0d0; }
+    .prod-img-foto {
+      height: 260px;
+      background: #fff;
+      padding: 10px;
+    }
+    .prod-img-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+    }
+
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-img { height: 320px; }
@@ -317,36 +333,61 @@
   <h2 class="sec-title">Nuestra línea de extintores</h2>
   <p class="sec-desc">Todos nuestros extintores cumplen la normativa vigente en Uruguay. Disponibles en distintas capacidades y agentes extintores según el riesgo a proteger.</p>
   <div class="prod-grid">
-    <div class="prod-card">
-      <div class="prod-img"><div class="prod-badge">CO₂</div>🧯</div>
-      <div class="prod-body"><h4>Extintor CO₂ 5 kg</h4><p>Ideal para cuadros eléctricos, servidores y laboratorios. Sin residuos.</p></div>
+
+    <!-- CO2 3.5 kg — foto real -->
+    <div class="prod-card prod-card-featured">
+      <div class="prod-img prod-img-foto">
+        <div class="prod-badge">CO₂ · 3,5 kg</div>
+        <img src="co2_3_5_kg_multifuego.png" alt="Extintor CO₂ 3,5 kg Multifuego"/>
+      </div>
+      <div class="prod-body">
+        <h4>Extintor CO₂ 3,5 kg</h4>
+        <p>Para fuegos en combustibles líquidos y equipos eléctricos. Portátil, sin residuos. Incluye soporte de pared.</p>
+      </div>
       <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
+
+    <!-- CO2 10 kg sobre ruedas — foto real -->
+    <div class="prod-card prod-card-featured">
+      <div class="prod-img prod-img-foto">
+        <div class="prod-badge">CO₂ · 10 kg</div>
+        <img src="carro_co2_10_kg_multifuego.png" alt="Extintor CO₂ 10 kg sobre ruedas Multifuego"/>
+      </div>
+      <div class="prod-body">
+        <h4>Extintor CO₂ 10 kg sobre ruedas</h4>
+        <p>Para fuegos en combustibles líquidos y equipos eléctricos. Alta capacidad, fácil desplazamiento. Ideal para industrias y talleres.</p>
+      </div>
+      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
+    </div>
+
+    <!-- Polvo ABC -->
     <div class="prod-card">
       <div class="prod-img"><div class="prod-badge">ABC</div>🔴</div>
-      <div class="prod-body"><h4>Extintor Polvo ABC 6 kg</h4><p>Multiusos para sólidos, líquidos y gases inflamables. El más solicitado.</p></div>
+      <div class="prod-body"><h4>Extintor Polvo ABC</h4><p>Multiusos para sólidos, líquidos y gases inflamables. Disponible en varias capacidades.</p></div>
       <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
-    <div class="prod-card">
-      <div class="prod-img"><div class="prod-badge">ABC</div>🧯</div>
-      <div class="prod-body"><h4>Extintor Polvo ABC 10 kg</h4><p>Mayor capacidad para depósitos, talleres e industrias de alto riesgo.</p></div>
-      <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
-    </div>
+
+    <!-- Agua y espuma -->
     <div class="prod-card">
       <div class="prod-img"><div class="prod-badge">Agua</div>💧</div>
-      <div class="prod-body"><h4>Extintor de agua y espuma</h4><p>Para materiales sólidos combustibles. Ideal en depósitos y almacenes.</p></div>
+      <div class="prod-body"><h4>Extintor agua y espuma</h4><p>Para materiales sólidos combustibles. Ideal en depósitos y almacenes.</p></div>
       <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
+
+    <!-- Agente limpio -->
     <div class="prod-card">
       <div class="prod-img"><div class="prod-badge">Limpio</div>🟢</div>
       <div class="prod-body"><h4>Extintor agente limpio</h4><p>Sin residuos, para salas de servidores y equipos electrónicos sensibles.</p></div>
       <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
+
+    <!-- Automático modular -->
     <div class="prod-card">
       <div class="prod-img"><div class="prod-badge">Auto</div>⚙️</div>
       <div class="prod-body"><h4>Extintor automático modular</h4><p>Se activa sin intervención humana. Para cocinas y cuadros eléctricos.</p></div>
       <div class="prod-footer"><a href="#contacto" class="prod-consultar">Consultar precio →</a></div>
     </div>
+
   </div>
 </section>
 
