@@ -69,7 +69,9 @@
       display: block;
     }
     .hero-text {
-      background: linear-gradient(160deg, #1a0000 0%, #2d0808 40%, #1a0000 100%);
+      background:
+        linear-gradient(160deg, rgba(20,0,0,0.88) 0%, rgba(45,8,8,0.85) 40%, rgba(20,0,0,0.90) 100%),
+        url('galeria_03.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -232,14 +234,6 @@
 
 
 
-    /* GALERÍA MOSAICO */
-    .galeria-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: repeat(3, 173px);
-      gap: 3px;
-      max-height: 522px;
-    }
     .galeria-item {
       position: relative;
       overflow: hidden;
@@ -409,36 +403,6 @@
   <div class="trust-item"><span>💼</span> Precios mayoristas</div>
   <div class="trust-item"><span>📞</span> Asesoramiento gratuito</div>
 </div>
-
-<!-- GALERÍA -->
-<section style="padding: 0; background: #111;">
-  <div class="galeria-grid">
-    <div class="galeria-item galeria-grande">
-      <img src="Multifuego_New.jpg" alt="Donde hubo fuego no había extintores - Multifuego"/>
-      <div class="galeria-overlay">
-        <span>•Venta •Recarga •Inspección •Mantenimiento</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="galeria_03.jpg" alt="Extintores Multifuego - Donde hubo fuego"/>
-      <div class="galeria-overlay">
-        <span>Empresa habilitada y certificada</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="galeria_01.jpg" alt="Stand Extintores Multifuego"/>
-      <div class="galeria-overlay">
-        <span>Nuestra gama completa de extintores</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="galeria_02.png" alt="Servicios Multifuego"/>
-      <div class="galeria-overlay">
-        <span>Licenciatarios UNIT y D.N.B</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- EXTINTORES -->
