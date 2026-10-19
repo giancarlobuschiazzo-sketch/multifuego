@@ -222,6 +222,16 @@
     /* SECCIONES */
     section { padding: 72px 5%; }
     .bg-rojo-suave { background: #fff5f5; }
+    /* CAMPANA SALUD — bloque temporal, ver comentario en el HTML */
+    .campana { background: #FBEFF4; border-top: 3px solid #C2185B; }
+    .campana-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; max-width: 1180px; margin: 0 auto; }
+    .campana-wrap img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.13); display: block; }
+    .campana .sec-eyebrow { color: #C2185B; }
+    .campana .sec-eyebrow::before { background: #C2185B; }
+    .campana h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 900; line-height: 1.18; margin-bottom: 16px; color: var(--carbon); }
+    .campana p { font-size: 0.97rem; line-height: 1.75; color: var(--gris-med); margin-bottom: 14px; }
+    .campana .hashtag { font-family: 'Montserrat', sans-serif; font-weight: 900; color: #C2185B; font-size: 1.05rem; letter-spacing: 0.01em; }
+    .campana .fuente { font-size: 0.76rem; color: #8a7680; margin-bottom: 0; margin-top: 18px; border-top: 1px solid #EBD3DF; padding-top: 12px; }
     .bg-gris { background: var(--gris-cla); }
     .bg-rojo { background: var(--rojo); }
     .bg-carbon { background: var(--carbon); }
@@ -446,6 +456,7 @@
     }
     @media (max-width: 600px) {
       .form-grid { grid-template-columns: 1fr; }
+      .campana-wrap { grid-template-columns: 1fr; gap: 28px; }
       .cta-franja { flex-direction: column; }
       .limpieza-acceso-left { flex-direction: column; text-align: center; }
     }
@@ -530,6 +541,31 @@
   <div class="trust-item"><span>📞</span> Asesoramiento gratuito</div>
 </div>
 
+
+<!-- ===================================================================
+     CAMPANA DE SALUD — BLOQUE TEMPORAL
+     19 de octubre, Dia Mundial de Lucha contra el Cancer de Mama.
+     Para retirarlo: borrar esta <section class="campana"> entera.
+     El CSS .campana queda en el <style> y no molesta si no se usa.
+     La pieza grafica es del Ministerio de Salud Publica (Programa
+     Nacional de Control del Cancer); se difunde, no implica vinculo
+     institucional con Multifuego.
+     =================================================================== -->
+<section class="campana">
+  <div class="campana-wrap">
+    <div>
+      <img src="campana-cancer-mama.webp" width="945" height="630" loading="lazy" decoding="async" alt="19 de octubre, Dia mundial de lucha contra el cancer de mama. #LaMamografiaSalvaVidas. Ministerio de Salud Publica, Programa Nacional de Control del Cancer."/>
+    </div>
+    <div>
+      <div class="sec-eyebrow">19 de octubre</div>
+      <h2>Nos sumamos al Día Mundial de Lucha contra el Cáncer de Mama</h2>
+      <p>Todos los días trabajamos para proteger vidas: las de la gente que entra a un galón, a un taller o a un comercio de nuestra zona y espera volver a su casa. Esa es nuestra tarea y es también la razón por la que hoy acompañamos esta campaña.</p>
+      <p>Porque proteger a una comunidad no es solo poner un extintor donde corresponde. Es también usar el lugar que uno tiene para recordar algo simple: <strong>la detección temprana salva vidas</strong>. Consultá con tu médico por el control que te corresponde.</p>
+      <p class="hashtag">#LaMamografiaSalvaVidas</p>
+      <p class="fuente">Pieza de la campaña oficial del Ministerio de Salud Pública — Programa Nacional de Control del Cáncer. Multifuego difunde esta campaña de salud pública; no representa al MSP ni tiene vínculo institucional con el organismo.</p>
+    </div>
+  </div>
+</section>
 
 <!-- EXTINTORES -->
 <section id="extintores" class="bg-rojo-suave">
